@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d22">
+  <meta name="description" content="Portfolio of Gunasri — M.Sc. Computer Science graduate, developer and technology enthusiast.">
+  <title>Gunasri | Computer Science Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#080d22; --panel:#101832; --panel2:#151f3d; --text:#f5f6ff;
+      --muted:#aab3cb; --accent:#9daeff; --accent2:#c5b7ff; --line:rgba(210,220,255,.13);
+      --white:#fff; --radius:24px; --max:1160px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at 82% 8%,rgba(83,102,196,.22),transparent 28rem),var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
+    .nav{position:sticky;top:0;z-index:10;background:rgba(8,13,34,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-family:"Space Grotesk";font-size:1.25rem;font-weight:700;letter-spacing:-.04em}
+    .brand span{color:var(--accent)}
+    .nav-links{display:flex;gap:26px;align-items:center;color:var(--muted);font-size:.9rem}
+    .nav-links a:hover{color:var(--white)}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid rgba(197,183,255,.5);border-radius:999px;padding:11px 19px;color:var(--white);background:linear-gradient(110deg,rgba(157,174,255,.2),rgba(197,183,255,.12));transition:.2s}
+    .nav-cta:hover,.btn:hover{transform:translateY(-2px);background:rgba(157,174,255,.25)}
+    .hero{padding:86px 0 76px;display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:70px;min-height:650px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--accent);font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    .dot{width:8px;height:8px;border-radius:50%;background:#83e5b1;box-shadow:0 0 15px #83e5b1}
+    h1,h2,h3{font-family:"Space Grotesk";line-height:1.12;letter-spacing:-.045em}
+    h1{font-size:clamp(3.1rem,7vw,5.9rem);margin:20px 0}
+    h1 span{background:linear-gradient(100deg,#aabaff,#d3c4ff);background-clip:text;-webkit-background-clip:text;color:transparent}
+    .hero p{max-width:600px;color:var(--muted);font-size:1.08rem}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+    .btn.primary{background:linear-gradient(110deg,#849cff,#b7a8ff);color:#10152f;border:0;font-weight:700}
+    .btn.secondary{background:transparent;border-color:var(--line)}
+    .hero-meta{display:flex;gap:25px;flex-wrap:wrap;margin-top:38px;color:var(--muted);font-size:.88rem}
+    .hero-meta strong{display:block;color:var(--white);font-size:1.08rem}
+    .portrait-wrap{position:relative;max-width:430px;margin-left:auto}
+    .portrait-wrap:before{content:"";position:absolute;inset:25px -20px -20px 25px;border:1px solid rgba(180,190,255,.4);border-radius:34px;transform:rotate(5deg)}
+    .portrait-card{position:relative;overflow:hidden;border-radius:30px;border:1px solid rgba(255,255,255,.18);background:#202b4b;box-shadow:0 30px 90px rgba(0,0,0,.35)}
+    .portrait-card img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 28%}
+    .photo-tag{position:absolute;left:18px;bottom:18px;padding:10px 15px;border:1px solid rgba(255,255,255,.22);border-radius:14px;background:rgba(8,13,34,.76);backdrop-filter:blur(12px);font-size:.82rem}
+    section{padding:78px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:30px}
+    .kicker{color:var(--accent);font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    h2{font-size:clamp(2.1rem,4vw,3.25rem);margin:9px 0 0}
+    .section-intro{color:var(--muted);max-width:470px;margin:0}
+    .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+    .panel{background:linear-gradient(145deg,rgba(21,31,61,.95),rgba(14,22,45,.95));border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+    .panel p{color:var(--muted);margin:0}
+    .stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .stat{padding:21px;border-radius:18px;background:rgba(255,255,255,.035);border:1px solid var(--line)}
+    .stat strong{font-family:"Space Grotesk";font-size:1.8rem;display:block;color:var(--accent2)}
+    .stat span{font-size:.82rem;color:var(--muted)}
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .skill-card{padding:23px;border-radius:20px;background:var(--panel);border:1px solid var(--line)}
+    .skill-card h3{font-size:1.05rem;margin:0 0 15px}
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{padding:7px 11px;border:1px solid rgba(170,185,255,.19);background:rgba(157,174,255,.07);border-radius:999px;color:#dbe0ff;font-size:.82rem}
+    .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .project{position:relative;overflow:hidden;min-height:270px;padding:28px;border-radius:24px;border:1px solid var(--line);background:linear-gradient(145deg,#18264c,#101832)}
+    .project-number{font-family:"Space Grotesk";font-size:.78rem;color:var(--accent);letter-spacing:.12em}
+    .project h3{font-size:1.55rem;margin:17px 0 12px}
+    .project p{color:var(--muted);max-width:510px}
+    .project .tags{margin-top:20px}
+    .project-icon{position:absolute;right:25px;top:25px;width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:rgba(197,183,255,.12);font-size:1.35rem}
+    .edu-list{display:grid;gap:14px}
+    .edu-item{display:grid;grid-template-columns:1fr auto;gap:20px;padding:23px 25px;border-radius:19px;background:var(--panel);border:1px solid var(--line)}
+    .edu-item h3{font-size:1.12rem;margin:0 0 6px;letter-spacing:-.02em}
+    .edu-item p{margin:0;color:var(--muted);font-size:.9rem}
+    .grade{align-self:center;color:var(--accent2);font-weight:700;white-space:nowrap}
+    .achievement{display:flex;gap:18px;align-items:flex-start}
+    .trophy{width:46px;height:46px;flex:0 0 46px;border-radius:15px;display:grid;place-items:center;background:rgba(197,183,255,.12);font-size:1.25rem}
+    .achievement h3{font-size:1.1rem;margin:0 0 8px;letter-spacing:-.02em}
+    .achievement p{color:var(--muted);margin:0}
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:18px}
+    .contact-list{display:grid;gap:15px;margin-top:20px}
+    .contact-item{padding:15px 17px;border-radius:15px;background:rgba(255,255,255,.035);border:1px solid var(--line)}
+    .contact-item small{display:block;color:var(--muted);margin-bottom:3px}
+    .contact-item a,.contact-item span{overflow-wrap:anywhere}
+    .contact-note{display:flex;flex-direction:column;justify-content:center;min-height:300px}
+    .contact-note h3{font-size:2rem;margin:0 0 15px}
+    .contact-note p{color:var(--muted);max-width:480px}
+    footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:.84rem}
+    .footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    .top-link{color:var(--accent)}
+    @media(max-width:850px){
+      .hero{grid-template-columns:1fr;gap:48px;padding-top:65px}
+      .portrait-wrap{margin:0 auto;width:min(100%,390px)}
+      .about-grid,.contact-grid{grid-template-columns:1fr}
+      .skills-grid{grid-template-columns:repeat(2,1fr)}
+      .nav-links{gap:14px}.nav-links a:not(.nav-cta){display:none}
+    }
+    @media(max-width:600px){
+      .wrap{width:min(100% - 30px,var(--max))}
+      .nav-inner{height:66px}.nav-cta{padding:9px 14px;font-size:.83rem}
+      .hero{min-height:auto;padding:58px 0 50px}
+      h1{font-size:3.25rem}
+      section{padding:58px 0}
+      .section-head{display:block}.section-intro{margin-top:14px}
+      .skills-grid,.project-grid{grid-template-columns:1fr}
+      .edu-item{grid-template-columns:1fr}.grade{justify-self:start}
+      .panel{padding:23px}
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home">Gunasri<span>.</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a>
+        <a class="nav-cta" href="#contact">Let's talk ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Open to opportunities</div>
+        <h1>Hello, I'm<br><span>Gunasri.</span></h1>
+        <p>M.Sc. Computer Science graduate with a passion for technology, problem-solving and building useful digital experiences. I enjoy learning new tools and turning ideas into practical projects.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">Explore my work <span>↗</span></a>
+          <a class="btn secondary" href="#contact">Get in touch</a>
+        </div>
+        <div class="hero-meta">
+          <div><strong>M.Sc. Computer Science</strong><span>2024 – 2026</span></div>
+          <div><strong>84.4%</strong><span>Master's aggregate</span></div>
+        </div>
+      </div>
+      <div class="portrait-wrap">
+        <div class="portrait-card">
+          <img src="assets/gunasri-portrait.jpg" alt="Portrait of Gunasri">
+          <div class="photo-tag">Computer Science Graduate · Erode</div>
+        </div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">A little about me</div><h2>Curious mind.<br>Continuous learner.</h2></div>
+          <p class="section-intro">Motivated to grow, collaborate and contribute to meaningful technology projects.</p>
+        </div>
+        <div class="about-grid">
+          <div class="panel"><p>Dedicated and motivated M.Sc. Computer Science graduate with good communication skills, basic technical knowledge, and a strong willingness to learn. I am a quick learner and hardworking, with an interest in software development, machine learning and web technologies. I am eager to begin my career in a growth-oriented organization where I can strengthen my skills and contribute to the team.</p></div>
+          <div class="stats">
+            <div class="stat"><strong>84.4%</strong><span>M.Sc. aggregate</span></div>
+            <div class="stat"><strong>87%</strong><span>B.Sc. aggregate</span></div>
+            <div class="stat"><strong>2</strong><span>Academic projects</span></div>
+            <div class="stat"><strong>1st</strong><span>Paper presentation prize</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head"><div><div class="kicker">What I work with</div><h2>Skills & strengths</h2></div><p class="section-intro">A growing toolkit across programming, databases and collaboration.</p></div>
+        <div class="skills-grid">
+          <div class="skill-card"><h3>Programming</h3><div class="tags"><span class="tag">Python</span><span class="tag">Java</span><span class="tag">C++</span></div></div>
+          <div class="skill-card"><h3>Database & concepts</h3><div class="tags"><span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">Data Structures</span></div></div>
+          <div class="skill-card"><h3>Development & AI</h3><div class="tags"><span class="tag">Web Development</span><span class="tag">Machine Learning</span></div></div>
+          <div class="skill-card"><h3>Soft skills</h3><div class="tags"><span class="tag">Teamwork</span><span class="tag">Time Management</span><span class="tag">Leadership</span><span class="tag">Communication</span><span class="tag">Critical Thinking</span></div></div>
+          <div class="skill-card"><h3>Languages</h3><div class="tags"><span class="tag">Tamil</span><span class="tag">English</span></div></div>
+          <div class="skill-card"><h3>Approach</h3><div class="tags"><span class="tag">Quick Learner</span><span class="tag">Willingness to Learn</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head"><div><div class="kicker">Selected work</div><h2>Projects I've built</h2></div><p class="section-intro">Academic projects that reflect my interest in intelligent systems and web experiences.</p></div>
+        <div class="project-grid">
+          <article class="project">
+            <div class="project-icon">◉</div><div class="project-number">01 / MACHINE LEARNING</div>
+            <h3>Deep Fake Video Detection</h3>
+            <p>Developed a project to identify manipulated videos using facial expressions, lip movements and video patterns, applying deep-learning techniques to support video authenticity analysis.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">CNN</span></div>
+          </article>
+          <article class="project">
+            <div class="project-icon">⌘</div><div class="project-number">02 / WEB DEVELOPMENT</div>
+            <h3>Student Portfolio</h3>
+            <p>Created a responsive and interactive portfolio website to present student projects, skills, achievements and academic performance in a clear, organized format.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Responsive Design</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="wrap">
+        <div class="section-head"><div><div class="kicker">Learning journey</div><h2>Education</h2></div><p class="section-intro">Academic background at Sri Vasavi College and B.K.N. Higher Secondary School.</p></div>
+        <div class="edu-list">
+          <article class="edu-item"><div><h3>Master of Computer Science</h3><p>Sri Vasavi College [SFW] · Bharathiar University · 2024–2026</p></div><div class="grade">84.4%</div></article>
+          <article class="edu-item"><div><h3>Bachelor of Computer Science</h3><p>Sri Vasavi College [SFW] · Bharathiar University · 2021–2024</p></div><div class="grade">87%</div></article>
+          <article class="edu-item"><div><h3>B.K.N. Higher Secondary School</h3><p>School-level marks supplied: 86.9% and 83%. Qualification labels need confirmation.</p></div><div class="grade">Details to confirm</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="wrap">
+        <div class="section-head"><div><div class="kicker">Milestones</div><h2>Achievements</h2></div></div>
+        <div class="panel achievement">
+          <div class="trophy">🏆</div>
+          <div><h3>First Prize — International e-Symposium</h3><p>Won first prize for a paper presentation at the International e-Symposium on “Way Forward to Thrive in VUCA World”.</p></div>
+        </div>
+        <div class="panel achievement" style="margin-top:14px">
+          <div class="trophy">✦</div>
+          <div><h3>Academic Recognition</h3><p>Recognized for securing an aggregate above 75% in the Bharathiar University examination.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head"><div><div class="kicker">Get in touch</div><h2>Let's create something<br>meaningful together.</h2></div></div>
+        <div class="contact-grid">
+          <div class="panel">
+            <h3 style="margin:0;font-size:1.25rem">Contact details</h3>
+            <div class="contact-list">
+              <div class="contact-item"><small>Phone</small><a href="tel:+919894974431">+91 98949 74431</a></div>
+              <div class="contact-item"><small>Email</small><a href="mailto:sanjujithu457@gmail.com">sanjujithu457@gmail.com</a></div>
+              <div class="contact-item"><small>Location</small><span>Nasiyanur, Erode – 638102, Tamil Nadu</span></div>
+            </div>
+          </div>
+          <div class="panel contact-note">
+            <div class="kicker">Open to opportunities</div>
+            <h3>Have a role or project in mind?</h3>
+            <p>I would be happy to connect, discuss opportunities and learn how I can contribute to your team.</p>
+            <div><a class="btn primary" href="mailto:sanjujithu457@gmail.com?subject=Portfolio%20Enquiry">Send me an email ↗</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><span>© <span id="year"></span> Gunasri. Designed with care.</span><a class="top-link" href="#home">Back to top ↑</a></div></footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
